@@ -28,7 +28,7 @@ namespace Escuela.Models
         }
 
         public override void MostrarDetalles(){
-            Console.WriteLine("Detalles del Estudiante:");
+            Console.WriteLine("-------------Detalles del Estudiante-------------------");
             Console.WriteLine($"ID: {Id}");
             Console.WriteLine($"Nombre: {Nombre} {Apellido}");
             Console.WriteLine($"Tipo Documento: {TipoDocumento}");
@@ -37,12 +37,13 @@ namespace Escuela.Models
             Console.WriteLine($"Teléfono: {Telefono}");
             Console.WriteLine($"Nombre Acudiente: {NombreAcudiente}");
             Console.WriteLine($"Curso Actual: {CursoActual}");
-            Console.WriteLine($"Fecha de Nacimiento: {FechaNacimiento.ToString("dd/MM/yyyy")}");
+            Console.WriteLine($"Fecha de Nacimiento: {FechaNacimiento}");
             Console.WriteLine("Calificaciones:");
             foreach (var calificacion in Calificaciones)
             {
                 Console.WriteLine(calificacion);
             }
+            Console.WriteLine("-----------------------------------------------------------");
         }
 
        
@@ -58,5 +59,23 @@ namespace Escuela.Models
             return DateTime.Now.Year - FechaNacimiento.Year;
         }
 
+        public string ObtenerNumDocumento(){
+           return NumeroDocumento;
+        }
+
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+
+        public string ObtenerApellido()
+        {
+            return Apellido;
+        }
+
+        public string ObtenerCursoActual()
+        {
+            return CursoActual;
+        }
     }
 }
