@@ -28,6 +28,8 @@ namespace Escuela.Models
         }
 
         public override void MostrarDetalles(){
+            Console.WriteLine("Detalles del Estudiante:");
+            Console.WriteLine($"ID: {Id}");
             Console.WriteLine($"Nombre: {Nombre} {Apellido}");
             Console.WriteLine($"Tipo Documento: {TipoDocumento}");
             Console.WriteLine($"Número Documento: {NumeroDocumento}");
