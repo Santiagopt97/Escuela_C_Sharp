@@ -55,7 +55,7 @@ namespace Escuela.Models
 
         public static void ProfesoresEj()
         {
-            var profesor1 = new Profesor("Laura", "González", "CC", "123456789", "laura.gonzalez@example.com", "555-1111", "Matemáticas", 8000000, new DateTime(2015, 9, 1));
+            var profesor1 = new Profesor("Laura", "González", "CC", "123456789", "laura.gonzalez@example.com", "555-1111", "Matemáticas", 8000000, new DateTime(2000, 9, 1));
             var profesor2 = new Profesor("Jorge", "Martínez", "TI", "987654321", "jorge.martinez@example.com", "555-2222", "Historia", 8200000, new DateTime(2016, 3, 15));
             var profesor3 = new Profesor("Ana", "Rodríguez", "CC", "456123789", "ana.rodriguez@example.com", "555-3333", "Biología", 8500000, new DateTime(2017, 1, 10));
 
@@ -354,6 +354,13 @@ namespace Escuela.Models
                     case 7:
                         break;
                     case 8:
+                    var profeMas5Años = profesor.Where(profesor => profesor.CalcularAntiguedad()/12 > 10).ToList();
+                    Console.WriteLine("Profesores que tienen más de 10 años de antigüedad en la institución:");
+                    foreach (var profe in profeMas5Años)
+                        {
+                            profe.MostrarDetalles();
+                            Console.WriteLine();
+                        }
                         break;
                     case 9:
                         break;
